@@ -1,0 +1,274 @@
+{
+  "teams": [
+    {
+      "city": "Golden State",
+      "name": "Warriors",
+      "slug": "warriors",
+      "values": [],
+      "color": "#FDB927",
+      "conference": "Western",
+      "division": "Pacific"
+    },
+    {
+      "city": "Chicago",
+      "name": "Bulls",
+      "slug": "bulls",
+      "values": [],
+      "color": "#CE1141",
+      "conference": "Eastern",
+      "division": "Central"
+    },
+    {
+      "city": "Toronto",
+      "name": "Raptors",
+      "slug": "raptors",
+      "values": [],
+      "color": "#CE1141",
+      "conference": "Eastern",
+      "division": "Atlantic"
+    },
+    {
+      "city": "Cleveland",
+      "name": "Cavaliers",
+      "slug": "cavaliers",
+      "values": [],
+      "color": "#860038",
+      "conference": "Eastern",
+      "division": "Central"
+    },
+    {
+      "city": "Washington",
+      "name": "Wizards",
+      "slug": "wizards",
+      "values": [],
+      "color": "#002566",
+      "conference": "Eastern",
+      "division": "Southeast"
+    },
+    {
+      "city": "Miami",
+      "name": "Heat",
+      "slug": "heat",
+      "values": [],
+      "color": "#98002E",
+      "conference": "Eastern",
+      "division": "Southeast"
+    },
+    {
+      "city": "Milwaukee",
+      "name": "Bucks",
+      "slug": "bucks",
+      "values": [],
+      "color": "#00471B",
+      "conference": "Eastern",
+      "division": "Central"
+    },
+    {
+      "city": "Atlanta",
+      "name": "Hawks",
+      "slug": "hawks",
+      "values": [],
+      "color": "#E13A3E",
+      "conference": "Eastern",
+      "division": "Southeast"
+    },
+    {
+      "city": "Oklahoma City",
+      "name": "Thunder",
+      "slug": "thunder",
+      "values": [],
+      "color": "#007DC6",
+      "conference": "Western",
+      "division": "Northwest"
+    },
+    {
+      "city": "Sacramento",
+      "name": "Kings",
+      "slug": "kings",
+      "values": [],
+      "color": "#724C9F",
+      "conference": "Western",
+      "division": "Pacific"
+    },
+    {
+      "city": "Houston",
+      "name": "Rockets",
+      "slug": "rockets",
+      "values": [],
+      "color": "#CE1141",
+      "conference": "Western",
+      "division": "Southwest"
+    },
+    {
+      "city": "Los Angeles",
+      "values": [],
+      "name": "Clippers",
+      "slug": "clippers",
+      "color": "#006BB6",
+      "conference": "Western",
+      "division": "Pacific"
+    },
+    {
+      "city": "Los Angeles",
+      "values": [],
+      "name": "Lakers",
+      "slug": "lakers",
+      "color": "#552582",
+      "conference": "Western",
+      "division": "Pacific"
+    },
+    {
+      "city": "Portland",
+      "name": "Trail Blazers",
+      "slug": "blazers",
+      "values": [],
+      "color": "#E03A3E",
+      "conference": "Western",
+      "division": "Northwest"
+    },
+    {
+      "city": "Dallas",
+      "name": "Mavericks",
+      "slug": "mavericks",
+      "values": [],
+      "color": "#007DC5",
+      "conference": "Western",
+      "division": "Southwest"
+    },
+    {
+      "city": "San Antonio",
+      "name": "Spurs",
+      "slug": "spurs",
+      "values": [],
+      "color": "#000000",
+      "conference": "Western",
+      "division": "Southwest"
+    },
+    {
+      "city": "Memphis",
+      "name": "Grizzlies",
+      "slug": "grizzlies",
+      "values": [],
+      "color": "#002566",
+      "conference": "Western",
+      "division": "Southwest"
+    },
+    {
+      "city": "Denver",
+      "name": "Nuggets",
+      "slug": "nuggets",
+      "values": [],
+      "color": "#FFB20F",
+      "conference": "Western",
+      "division": "Northwest"
+    },
+    {
+      "city": "Indiana",
+      "name": "Pacers",
+      "slug": "pacers",
+      "values": [],
+      "color": "#00275D",
+      "conference": "Eastern",
+      "division": "Central"
+    },
+    {
+      "city": "Phoenix",
+      "name": "Suns",
+      "slug": "suns",
+      "values": [],
+      "color": "#E56020",
+      "conference": "Western",
+      "division": "Pacific"
+    },
+    {
+      "city": "New Orleans",
+      "name": "Pelicans",
+      "slug": "pelicans",
+      "values": [],
+      "color": "#001641",
+      "conference": "Eastern",
+      "division": "Southwest"
+    },
+    {
+      "city": "Orlando",
+      "name": "Magic",
+      "slug": "magic",
+      "values": [],
+      "color": "#007DC5",
+      "conference": "Eastern",
+      "division": "Southeast"
+    },
+    {
+      "city": "Brooklyn",
+      "name": "Nets",
+      "slug": "nets",
+      "values": [],
+      "color": "#000000",
+      "conference": "Eastern",
+      "division": "Atlantic"
+    },
+    {
+      "city": "Boston",
+      "name": "Celtics",
+      "slug": "celtics",
+      "values": [],
+      "color": "#008348",
+      "conference": "Eastern",
+      "division": "Atlantic"
+    },
+    {
+      "city": "Utah",
+      "name": "Jazz",
+      "slug": "jazz",
+      "values": [],
+      "color": "#002B5C",
+      "conference": "Western",
+      "division": "Northwest"
+    },
+    {
+      "city": "Minnesota",
+      "name": "Timberwolves",
+      "slug": "timberwolves",
+      "values": [],
+      "color": "#00A94F",
+      "conference": "Western",
+      "division": "Northwest"
+    },
+    {
+      "city": "New York",
+      "name": "Knicks",
+      "slug": "knicks",
+      "values": [],
+      "color": "#F58426",
+      "conference": "Eastern",
+      "division": "Atlantic"
+    },
+    {
+      "city": "Philadelphia",
+      "name": "76ers",
+      "slug": "philly",
+      "values": [],
+      "color": "#ED174C",
+      "conference": "Eastern",
+      "division": "Atlantic"
+    },
+    {
+      "city": "Detroit",
+      "name": "Pistons",
+      "slug": "pistons",
+      "values": [],
+      "color": "#ED174C",
+      "conference": "Eastern",
+      "division": "Central"
+    },
+    {
+      "city": "Charlotte",
+      "name": "Hornets",
+      "slug": "hornets",
+      "values": [],
+      "color": "#1D1160",
+      "conference": "Eastern",
+      "division": "Southeast"
+    }
+  ]
+}
