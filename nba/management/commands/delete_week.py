@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from nbapowerranks.models import Team, Ranking
+from nba.models import Team, Ranking
 import json
 import re
 import sys

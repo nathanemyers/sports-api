@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from nbapowerranks.models import Team, Ranking
+from nba.models import Team, Ranking
 from bs4 import BeautifulSoup, NavigableString
 import urllib2
 import json
