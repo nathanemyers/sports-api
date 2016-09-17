@@ -7,11 +7,6 @@ import sys
 from nba.models import Ranking
 from nba.scrapper.week_data import WeekData
 
-import pdb
-
-# TODO add this as an option
-YEAR = 2016
-
 class Command(BaseCommand):
     help = 'Fetches the weekly ranking data from ESPN. If no week is specified, fetch rankings from the current week'
 
@@ -42,6 +37,8 @@ class Command(BaseCommand):
         if 'week' in options and options['week'] is not None:
             url = 'http://espn.go.com/nba/powerrankings/_/week/' + str(options['week'])
 
+        year = options['year']
+
         sys.stdout.write('Scraping URL: ' + url + '\n')
         sys.stdout.flush()
         response = urllib2.urlopen(url)
@@ -59,19 +56,19 @@ class Command(BaseCommand):
         else:
             week = int(re.search('Week (\w+)', matched_week).group(1))
 
-        data = WeekData(options['year'], week)
+        data = WeekData(year, week)
 
         if not options['test']:
-            lookup = Ranking.objects.filter(year=YEAR, week=week)
+            lookup = Ranking.objects.filter(year=year, week=week)
             if len(lookup) > 0: 
-                sys.stdout.write('Ranking data for Year: ' + str(YEAR) + ' Week: ' + str(week) + ' already present. Quiting.\n')
+                sys.stdout.write('Ranking data for Year: ' + str(year) + ' Week: ' + str(week) + ' already present. Quiting.\n')
                 sys.stdout.flush()
                 return
 
         rows = table.find_all('tr', ['evenrow', 'oddrow'])
 
         if options['test']:
-            print 'Year: ' + str(YEAR)
+            print 'Year: ' + str(year)
             print 'Week: ' + str(week) + '\n'
 
         for row in rows:
@@ -102,8 +99,17 @@ class Command(BaseCommand):
                     'summary': summary,
                     'rank': rank
                     })
-            # end for
+        # end for
 
-        print data.to_json()
-        sys.stdout.write('Finished scrape of Year: ' + str(YEAR) + ' Week: ' + str(week) + '.\n')
+        try:
+            data.save()
+        except ValueError as err:
+            print err
+            dump_filename = 'nba-dump-{0}-{1}.json'.format(year, week)
+            with open(dump_filename, 'w') as f:
+                f.write(data.to_json())
+            print 'Dumped week scrape to {0}. Repair the file and manually upload with:'.format(dump_filename)
+            print 'python manage.py upload_json'
+
+        sys.stdout.write('Finished scrape of Year: ' + str(year) + ' Week: ' + str(week) + '.\n')
             

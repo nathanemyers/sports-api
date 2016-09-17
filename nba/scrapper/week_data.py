@@ -39,7 +39,8 @@ class WeekData:
         return True
 
     def to_json(self):
-        return json.dumps(self.rankings)
+        return json.dumps(self.rankings, sort_keys=True, 
+                indent=4, separators=(',', ': '))
 
     def load_from_json(self, json):
         return
