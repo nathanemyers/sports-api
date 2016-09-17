@@ -1,89 +1,16 @@
 from django.core.management.base import BaseCommand, CommandError
-from nba.models import Team, Ranking
 from bs4 import BeautifulSoup, NavigableString
 import urllib2
 import json
 import re
 import sys
+from nba.models import Ranking
+from nba.scrapper.week_data import WeekData
 
 import pdb
 
 # TODO add this as an option
 YEAR = 2016
-
-def stripTags(html, invalid_tags):
-    for tag in html:
-        if tag.name in invalid_tags:
-            s = ""
-            for c in tag.contents:
-                if not isinstance(c, NavigableString):
-                    c = stripTags(unicode(c), invalid_tags)
-                s += unicode(c)
-
-            tag.replaceWith(s)
-    return html
-
-def resolve_team(team_html_link):
-    if 'lakers' in team_html_link:
-        return Team.objects.get(name='Lakers')
-    if 'clippers' in team_html_link:
-        return Team.objects.get(name='Clippers')
-    if 'warriors' in team_html_link:
-        return Team.objects.get(name='Warriors')
-    if 'cavaliers' in team_html_link:
-        return Team.objects.get(name='Cavaliers')
-    if 'spurs' in team_html_link:
-        return Team.objects.get(name='Spurs')
-    if 'thunder' in team_html_link:
-        return Team.objects.get(name='Thunder')
-    if 'rockets' in team_html_link:
-        return Team.objects.get(name='Rockets')
-    if 'grizzlies' in team_html_link:
-        return Team.objects.get(name='Grizzlies')
-    if 'hawks' in team_html_link:
-        return Team.objects.get(name='Hawks')
-    if 'heat' in team_html_link:
-        return Team.objects.get(name='Heat')
-    if 'bulls' in team_html_link:
-        return Team.objects.get(name='Bulls')
-    if 'pelicans' in team_html_link:
-        return Team.objects.get(name='Pelicans')
-    if 'raptors' in team_html_link:
-        return Team.objects.get(name='Raptors')
-    if 'celtics' in team_html_link:
-        return Team.objects.get(name='Celtics')
-    if 'bucks' in team_html_link:
-        return Team.objects.get(name='Bucks')
-    if 'wizards' in team_html_link:
-        return Team.objects.get(name='Wizards')
-    if 'pacers' in team_html_link:
-        return Team.objects.get(name='Pacers')
-    if 'pistons' in team_html_link:
-        return Team.objects.get(name='Pistons')
-    if 'jazz' in team_html_link:
-        return Team.objects.get(name='Jazz')
-    if 'kings' in team_html_link:
-        return Team.objects.get(name='Kings')
-    if 'suns' in team_html_link:
-        return Team.objects.get(name='Suns')
-    if 'mavericks' in team_html_link:
-        return Team.objects.get(name='Mavericks')
-    if 'hornets' in team_html_link:
-        return Team.objects.get(name='Hornets')
-    if 'magic' in team_html_link:
-        return Team.objects.get(name='Magic')
-    if 'knicks' in team_html_link:
-        return Team.objects.get(name='Knicks')
-    if 'wolves' in team_html_link:
-        return Team.objects.get(name='Timberwolves')
-    if 'nuggets' in team_html_link:
-        return Team.objects.get(name='Nuggets')
-    if 'blazers' in team_html_link:
-        return Team.objects.get(name='Trail Blazers')
-    if 'nets' in team_html_link:
-        return Team.objects.get(name='Nets')
-    if '76ers' in team_html_link:
-        return Team.objects.get(name='76ers')
 
 class Command(BaseCommand):
     help = 'Fetches the weekly ranking data from ESPN. If no week is specified, fetch rankings from the current week'
@@ -94,6 +21,14 @@ class Command(BaseCommand):
                 type=int,
                 dest='week',
                 nargs='?',
+                help='Fetch the specified week')
+
+        parser.add_argument('--year',
+                action='store',
+                type=int,
+                dest='year',
+                nargs='?',
+                default='2017',
                 help='Fetch the specified week')
 
         parser.add_argument('--test',
@@ -124,11 +59,11 @@ class Command(BaseCommand):
         else:
             week = int(re.search('Week (\w+)', matched_week).group(1))
 
+        data = WeekData(options['year'], week)
+
         if not options['test']:
             lookup = Ranking.objects.filter(year=YEAR, week=week)
             if len(lookup) > 0: 
-                # TODO should check to see if all 30 rankings are present, 
-                # and clean up any partial uploads if needed
                 sys.stdout.write('Ranking data for Year: ' + str(YEAR) + ' Week: ' + str(week) + ' already present. Quiting.\n')
                 sys.stdout.flush()
                 return
@@ -146,15 +81,12 @@ class Command(BaseCommand):
             rank = cols[0].string
 
             city_col = cols[1].find_all('a')
-            # this is the link to the team's detail page, 
-            # we can use this to differentiate between the Clippers and the Lakers
-            team_html_link = city_col[0].get('href') 
+            team = city_col[0].get('href') 
 
-            team = resolve_team(team_html_link)
+            summary_raw = cols[3]
             
-            comment = stripTags(cols[3], ['b', 'i', 'a', 'u'])
-            # TODO comment.getText() will sometimes leave a bunch of whitespace at the end, doesn't seem to effect webapp though
-            comment_string = comment.getText()
+            # TODO summary.getText() will sometimes leave a bunch of whitespace at the end, doesn't seem to effect webapp though
+            summary = summary_raw.getText()
 
             record = row.find('span', class_='pr-record').string
 
@@ -162,17 +94,16 @@ class Command(BaseCommand):
                 print 'Team: ' + str(team)
                 print 'Rank: ' + rank
                 print 'Record: ' + record
-                print 'Summary: ' + comment_string + '\n'
+                print 'Summary: ' + summary + '\n'
             else:
-                rank_object = Ranking(
-                        year = YEAR,
-                        rank = rank,
-                        record = record,
-                        team = team,
-                        summary = comment_string,
-                        week = week
-                        )
-                rank_object.save()
+                data.add_rank({
+                    'record': record,
+                    'team': team,
+                    'summary': summary,
+                    'rank': rank
+                    })
+            # end for
 
+        print data.to_json()
         sys.stdout.write('Finished scrape of Year: ' + str(YEAR) + ' Week: ' + str(week) + '.\n')
             

@@ -10,10 +10,8 @@ class WeekData:
 
     def add_rank(self, data):
         self.rankings.append(data)
-        
 
     def save(self):
-            
         if not verify_length():
             raise ValueError('Missing Teams!')
         if not verify_ranks():
@@ -41,15 +39,14 @@ class WeekData:
         return True
 
     def to_json(self):
-        json.dumps(self.rankings)
-        return
+        return json.dumps(self.rankings)
 
     def load_from_json(self, json):
         return
 
 def process_rank(rank, year, week):
     rank.team = resolve_team(rank.team)
-    rank.summary = stripTags(rank.summary)
+    rank.summary = stripTags(rank.summary, ['b', 'i', 'a', 'u'])
     rank.year = year
     rank.week = week
     return rank

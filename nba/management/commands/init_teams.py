@@ -22,7 +22,12 @@ from django.core.management.base import BaseCommand, CommandError
 
 class Command(BaseCommand):
     help = 'Seeds DB with Team data. *Do not run on populated Team DB!*'
-    #def add_arguments(self, parser):
+    def add_arguments(self, parser):
+        parser.add_argument('--silent',
+                action='store_true',
+                dest='silent',
+                default=False,
+                help='Supresses output')
 
     def handle(self, *args, **options):
         with open('nba/data/teams.json') as data_file:
