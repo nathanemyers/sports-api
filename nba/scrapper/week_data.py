@@ -3,7 +3,7 @@ from nba.models import Ranking
 
 class WeekData:
     
-    def __init__(self, year, week):
+    def __init__(self, year=None, week=None):
         self.rankings = []
         self.year = year
         self.week = week
@@ -22,34 +22,48 @@ class WeekData:
         for rank in self.rankings:
             rank_object = Ranking(
                     year = self.year,
+                    week = self.week,
                     rank = data.rank,
                     record = data.record,
                     team = team,
-                    summary = data.comment_string,
-                    week = data.week
+                    summary = data.comment_string
                     )
             rank_object.save()
 
     def verify_length(self):
-        if self.rankings.__len__ != 30:
+        if self.rankings.__len__() != 30:
             return False
         return True
 
     def verify_ranks(self):
+        ''' Make sure each ranking appears once and only once'''
+        for current_rank in range(1, 31):
+            count = 0
+            for rank in self.rankings:
+                if rank['rank'] == str(current_rank):
+                    count = count + 1
+            if count != 1:
+                return False
         return True
 
     def to_json(self):
-        return json.dumps(self.rankings, sort_keys=True, 
+        serialized = {
+                'year': self.year,
+                'week': self.week,
+                'rankings': self.rankings
+                }
+        return json.dumps(serialized, sort_keys=True, 
                 indent=4, separators=(',', ': '))
 
-    def load_from_json(self, json):
-        return
+    def load_from_json(self, json_data):
+        data = json.loads(json_data)
+        self.year = data['year']
+        self.week = data['week']
+        self.rankings = data['rankings']
 
 def process_rank(rank, year, week):
     rank.team = resolve_team(rank.team)
     rank.summary = stripTags(rank.summary, ['b', 'i', 'a', 'u'])
-    rank.year = year
-    rank.week = week
     return rank
 
 def stripTags(html, invalid_tags):

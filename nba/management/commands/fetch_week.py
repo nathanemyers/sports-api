@@ -16,6 +16,7 @@ class Command(BaseCommand):
                 type=int,
                 dest='week',
                 nargs='?',
+                default='',
                 help='Fetch the specified week')
 
         parser.add_argument('--year',
@@ -26,18 +27,19 @@ class Command(BaseCommand):
                 default='2017',
                 help='Fetch the specified week')
 
-        parser.add_argument('--test',
+        parser.add_argument('--dump',
                 action='store_true',
                 dest='test',
                 default=False,
-                help='Output data to stdout instead of DB')
+                help='Dump data to json instead of to DB')
 
     def handle(self, *args, **options):
         url = 'http://espn.go.com/nba/powerrankings'
-        if 'week' in options and options['week'] is not None:
-            url = 'http://espn.go.com/nba/powerrankings/_/week/' + str(options['week'])
-
         year = options['year']
+        week = options['week']
+        if week != '':
+            url = 'http://espn.go.com/nba/powerrankings/_/week/{0}'.format(week)
+
 
         sys.stdout.write('Scraping URL: ' + url + '\n')
         sys.stdout.flush()
@@ -58,10 +60,10 @@ class Command(BaseCommand):
 
         data = WeekData(year, week)
 
-        if not options['test']:
+        if not options['dump']:
             lookup = Ranking.objects.filter(year=year, week=week)
             if len(lookup) > 0: 
-                sys.stdout.write('Ranking data for Year: ' + str(year) + ' Week: ' + str(week) + ' already present. Quiting.\n')
+                sys.stdout.write('Ranking data for Year: {0} Week: {1} already present. Quiting.\n'.format(year, week))
                 sys.stdout.flush()
                 return
 
@@ -87,19 +89,16 @@ class Command(BaseCommand):
 
             record = row.find('span', class_='pr-record').string
 
-            if options['test']:
-                print 'Team: ' + str(team)
-                print 'Rank: ' + rank
-                print 'Record: ' + record
-                print 'Summary: ' + summary + '\n'
-            else:
-                data.add_rank({
-                    'record': record,
-                    'team': team,
-                    'summary': summary,
-                    'rank': rank
-                    })
+            data.add_rank({
+                'record': record,
+                'team': team,
+                'summary': summary,
+                'rank': rank
+                })
         # end for
+
+        if options['dump']:
+            print data.to_json()
 
         try:
             data.save()

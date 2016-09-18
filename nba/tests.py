@@ -38,6 +38,14 @@ class WeekDataTest(TestCase):
         test = WeekData(2016, 1)
         self.assertFalse(test.verify_ranks())
 
+    def test_load_json(self):
+        test = WeekData()
+        with open('nba/fixtures/week1data.json', 'r') as f:
+            json = f.read()
+        test.load_from_json(json)
+        
+        self.assertTrue(test.verify_ranks())
+        self.assertTrue(test.verify_length())
 
 
 

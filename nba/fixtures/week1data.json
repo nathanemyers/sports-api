@@ -1,182 +1,186 @@
-[
+{
+  "week": 1,
+  "year": 2016,
+  "rankings": [
     {
-        "rank": "1",
-        "record": "3-0",
-        "summary": "After a 67-15 season, Golden State isn't supposed to be able to wow us just a few games in. But the Dubs did. Or, rather, Steph Curry did. Others, perhaps, will dismiss two-thirds of the damage he's inflicted by noting how beat up New Orleans is these days. Not us, though. Props to the MVP for such early focus and sharpness.",
-        "team": "http://www.espn.com/nba/team/_/name/gs/golden-state-warriors"
+      "rank": "1",
+      "record": "3-0",
+      "summary": "After a 67-15 season, Golden State isn't supposed to be able to wow us just a few games in. But the Dubs did. Or, rather, Steph Curry did. Others, perhaps, will dismiss two-thirds of the damage he's inflicted by noting how beat up New Orleans is these days. Not us, though. Props to the MVP for such early focus and sharpness.",
+      "team": "http://www.espn.com/nba/team/_/name/gs/golden-state-warriors"
     },
     {
-        "rank": "2",
-        "record": "3-0",
-        "summary": "It didn't take long to get our first glimpses of Angry Russ and, of surely greater comfort to Thunder fans, Silky KD. OKC has looked as vulnerable on defense as those same fans feared, but the offense is humming early and Billy Donovan seems to be just fine with Westbrook and Durant commanding the team's media spotlight.",
-        "team": "http://www.espn.com/nba/team/_/name/okc/oklahoma-city-thunder"
+      "rank": "2",
+      "record": "3-0",
+      "summary": "It didn't take long to get our first glimpses of Angry Russ and, of surely greater comfort to Thunder fans, Silky KD. OKC has looked as vulnerable on defense as those same fans feared, but the offense is humming early and Billy Donovan seems to be just fine with Westbrook and Durant commanding the team's media spotlight.",
+      "team": "http://www.espn.com/nba/team/_/name/okc/oklahoma-city-thunder"
     },
     {
-        "rank": "3",
-        "record": "2-1",
-        "summary": "Each of LeBron's past five Cavs teams have started the season 0-1, but you don't sense much concern emanating from The Land after its bounce-back wins over Memphis and Miami. The King, meanwhile, needs just 21 points Monday night in Philly to become the first player in league history to reach 25,000 points before the age of 31.",
-        "team": "http://www.espn.com/nba/team/_/name/cle/cleveland-cavaliers"
+      "rank": "3",
+      "record": "2-1",
+      "summary": "Each of LeBron's past five Cavs teams have started the season 0-1, but you don't sense much concern emanating from The Land after its bounce-back wins over Memphis and Miami. The King, meanwhile, needs just 21 points Monday night in Philly to become the first player in league history to reach 25,000 points before the age of 31.",
+      "team": "http://www.espn.com/nba/team/_/name/cle/cleveland-cavaliers"
     },
     {
-        "rank": "4",
-        "record": "2-1",
-        "summary": "A loss to OKC in OKC when the Thunder are fully healthy is as easily pardoned as they come. The real shock to the system caused by Thunder 112, Spurs 106 came from reading that the L was just Pop and Timmy's second in a season opener ever. No joke: Gregg Popovich and Tim Duncan now sport a 17-2 record on opening night.",
-        "team": "http://www.espn.com/nba/team/_/name/sa/san-antonio-spurs"
+      "rank": "4",
+      "record": "2-1",
+      "summary": "A loss to OKC in OKC when the Thunder are fully healthy is as easily pardoned as they come. The real shock to the system caused by Thunder 112, Spurs 106 came from reading that the L was just Pop and Timmy's second in a season opener ever. No joke: Gregg Popovich and Tim Duncan now sport a 17-2 record on opening night.",
+      "team": "http://www.espn.com/nba/team/_/name/sa/san-antonio-spurs"
     },
     {
-        "rank": "5",
-        "record": "3-0",
-        "summary": "Such was the video-game nature of the numbers coming from Steph Curry and Russell Westbrook that Blake Griffin has barely been mentioned in the Western Conference Player of the Week chatter even though Blake's are just as insane. Early evidence of that new, expanded offensive role for DeAndre Jordan, by contrast, is scarce.",
-        "team": "http://www.espn.com/nba/team/_/name/lac/la-clippers"
+      "rank": "5",
+      "record": "3-0",
+      "summary": "Such was the video-game nature of the numbers coming from Steph Curry and Russell Westbrook that Blake Griffin has barely been mentioned in the Western Conference Player of the Week chatter even though Blake's are just as insane. Early evidence of that new, expanded offensive role for DeAndre Jordan, by contrast, is scarce.",
+      "team": "http://www.espn.com/nba/team/_/name/lac/la-clippers"
     },
     {
-        "rank": "6",
-        "record": "3-1",
-        "summary": "Joakim Noah coming off the bench is going to take some getting used to, but it's hard to argue with the early returns. Chicago outscored the opposition by 41 points with Nikola Mirotic on the floor in its first three games and was outscored by 28 with Mirotic on the bench. (Please insert your favorite small sample size disclaimer here.)",
-        "team": "http://www.espn.com/nba/team/_/name/chi/chicago-bulls"
+      "rank": "6",
+      "record": "3-1",
+      "summary": "Joakim Noah coming off the bench is going to take some getting used to, but it's hard to argue with the early returns. Chicago outscored the opposition by 41 points with Nikola Mirotic on the floor in its first three games and was outscored by 28 with Mirotic on the bench. (Please insert your favorite small sample size disclaimer here.)",
+      "team": "http://www.espn.com/nba/team/_/name/chi/chicago-bulls"
     },
     {
-        "rank": "7",
-        "record": "2-1",
-        "summary": "Free-agent-to-be Hassan Whiteside has started the new season well. Ditto for Dwyane Wade. Goran Dragic hasn't made nearly the same splash, but no one in South Beach is complaining much after Sunday's dramatic (and historic) turnaround from 21 points down to a 20-point runaway victory over the reeling Rockets. ",
-        "team": "http://www.espn.com/nba/team/_/name/mia/miami-heat"
+      "rank": "7",
+      "record": "2-1",
+      "summary": "Free-agent-to-be Hassan Whiteside has started the new season well. Ditto for Dwyane Wade. Goran Dragic hasn't made nearly the same splash, but no one in South Beach is complaining much after Sunday's dramatic (and historic) turnaround from 21 points down to a 20-point runaway victory over the reeling Rockets. ",
+      "team": "http://www.espn.com/nba/team/_/name/mia/miami-heat"
     },
     {
-        "rank": "8",
-        "record": "3-0",
-        "summary": "Cautious optimism is what they're preaching north of the border, where the locals haven't forgotten how last season's Raptors bolted to a 15-4 start, which meant absolutely zilch come playoff time. Yet there's no denying that going into Boston on Friday night and beating their only real rival for the Atlantic Division felt rather satisfying.",
-        "team": "http://www.espn.com/nba/team/_/name/tor/toronto-raptors"
+      "rank": "8",
+      "record": "3-0",
+      "summary": "Cautious optimism is what they're preaching north of the border, where the locals haven't forgotten how last season's Raptors bolted to a 15-4 start, which meant absolutely zilch come playoff time. Yet there's no denying that going into Boston on Friday night and beating their only real rival for the Atlantic Division felt rather satisfying.",
+      "team": "http://www.espn.com/nba/team/_/name/tor/toronto-raptors"
     },
     {
-        "rank": "9",
-        "record": "3-1",
-        "summary": "Early features of the Hawks' season: Two narrow wins over Charlotte after Atlanta dropped its fourth successive season opener, lots of 3-point attempts from increasingly long-range-minded big man Al Horford and slight game-to-game improvement from Kent Bazemore as the successor to DeMarre Carroll at small forward.",
-        "team": "http://www.espn.com/nba/team/_/name/atl/atlanta-hawks"
+      "rank": "9",
+      "record": "3-1",
+      "summary": "Early features of the Hawks' season: Two narrow wins over Charlotte after Atlanta dropped its fourth successive season opener, lots of 3-point attempts from increasingly long-range-minded big man Al Horford and slight game-to-game improvement from Kent Bazemore as the successor to DeMarre Carroll at small forward.",
+      "team": "http://www.espn.com/nba/team/_/name/atl/atlanta-hawks"
     },
     {
-        "rank": "10",
-        "record": "2-1",
-        "summary": "Lost amid the hoopla of the big Wednesday night beatdowns absorbed at home by Houston and Milwaukee was a 30-point Memphis home defeat to Cleveland that ranks as the Grizzlies' worst opening-night loss in franchise history. The tests keep coming, too, because the Griz start a five-game road trip Monday night in Oakland.",
-        "team": "http://www.espn.com/nba/team/_/name/mem/memphis-grizzlies"
+      "rank": "10",
+      "record": "2-1",
+      "summary": "Lost amid the hoopla of the big Wednesday night beatdowns absorbed at home by Houston and Milwaukee was a 30-point Memphis home defeat to Cleveland that ranks as the Grizzlies' worst opening-night loss in franchise history. The tests keep coming, too, because the Griz start a five-game road trip Monday night in Oakland.",
+      "team": "http://www.espn.com/nba/team/_/name/mem/memphis-grizzlies"
     },
     {
-        "rank": "11",
-        "record": "3-0",
-        "summary": "There was a tweet circulating Sunday night, amid all the madness emanating from the World Series and other sporting pursuits, about the three teams Detroit has beaten (Atlanta, Utah and Chicago) going 8-0 combined in their other games. The only Pistons downers to date: Too many empty seats at the home opener and the \nloss of Jodie Meeks.\n\n\n",
-        "team": "http://www.espn.com/nba/team/_/name/det/detroit-pistons"
+      "rank": "11",
+      "record": "3-0",
+      "summary": "There was a tweet circulating Sunday night, amid all the madness emanating from the World Series and other sporting pursuits, about the three teams Detroit has beaten (Atlanta, Utah and Chicago) going 8-0 combined in their other games. The only Pistons downers to date: Too many empty seats at the home opener and the \nloss of Jodie Meeks.\n\n\n",
+      "team": "http://www.espn.com/nba/team/_/name/det/detroit-pistons"
     },
     {
-        "rank": "12",
-        "record": "2-1",
-        "summary": "The longest active streak of opening-night losses -- five in a row -- has been halted at last. The Wiz won their opener and, in a mere three games, have left the clear impression that they sport the East's best backcourt thanks to the apparent leap Bradley Beal has made next to a John Wall reveling in more offensive freedom than he's ever had.",
-        "team": "http://www.espn.com/nba/team/_/name/wsh/washington-wizards"
+      "rank": "12",
+      "record": "2-1",
+      "summary": "The longest active streak of opening-night losses -- five in a row -- has been halted at last. The Wiz won their opener and, in a mere three games, have left the clear impression that they sport the East's best backcourt thanks to the apparent leap Bradley Beal has made next to a John Wall reveling in more offensive freedom than he's ever had.",
+      "team": "http://www.espn.com/nba/team/_/name/wsh/washington-wizards"
     },
     {
-        "rank": "13",
-        "record": "2-1",
-        "summary": "Faced with a three-game roadie to get things started, Utah rebounded from disappointment in Detroit with two typically stingy performances defensively in Philly and Indy. Next comes Wednesday's home opener at the newly renamed Vivint Smart Home Arena, which the locals are apparently calling The Viv. Yea or nay on The Viv?",
-        "team": "http://www.espn.com/nba/team/_/name/utah/utah-jazz"
+      "rank": "13",
+      "record": "2-1",
+      "summary": "Faced with a three-game roadie to get things started, Utah rebounded from disappointment in Detroit with two typically stingy performances defensively in Philly and Indy. Next comes Wednesday's home opener at the newly renamed Vivint Smart Home Arena, which the locals are apparently calling The Viv. Yea or nay on The Viv?",
+      "team": "http://www.espn.com/nba/team/_/name/utah/utah-jazz"
     },
     {
-        "rank": "14",
-        "record": "1-2",
-        "summary": "For all the justified Brad Stevens love out there, Boston's young coach is predictably still working out how to divvy up all the minutes on a roster that doesn't come with an obvious pecking order. Another early issue has cropped up: Consistent offense from someone other than Isaiah Thomas is proving more elusive than it should.",
-        "team": "http://www.espn.com/nba/team/_/name/bos/boston-celtics"
+      "rank": "14",
+      "record": "1-2",
+      "summary": "For all the justified Brad Stevens love out there, Boston's young coach is predictably still working out how to divvy up all the minutes on a roster that doesn't come with an obvious pecking order. Another early issue has cropped up: Consistent offense from someone other than Isaiah Thomas is proving more elusive than it should.",
+      "team": "http://www.espn.com/nba/team/_/name/bos/boston-celtics"
     },
     {
-        "rank": "15",
-        "record": "0-3",
-        "summary": "In a week of stunners -- even by the unpredictable standards the NBA is known to deliver in the embryonic stages of its 82-game schedule -- Houston's 0-3 launch tops the list of hard-to-process developments. Worse than the results and the Rockets' various injuries, though, is the sense that team spirit is somehow already lacking.",
-        "team": "http://www.espn.com/nba/team/_/name/hou/houston-rockets"
+      "rank": "15",
+      "record": "0-3",
+      "summary": "In a week of stunners -- even by the unpredictable standards the NBA is known to deliver in the embryonic stages of its 82-game schedule -- Houston's 0-3 launch tops the list of hard-to-process developments. Worse than the results and the Rockets' various injuries, though, is the sense that team spirit is somehow already lacking.",
+      "team": "http://www.espn.com/nba/team/_/name/hou/houston-rockets"
     },
     {
-        "rank": "16",
-        "record": "2-1",
-        "summary": "Wes Matthews, Deron Williams and Chandler Parsons are all suddenly back ahead of schedule. Dirk Nowitzki, as this Sunday night dunk at Staples Center suggests, is feeling more limber than advertised at 37. And the looming re-signing of Rick Carlisle only helps the Mavs wipe away even more of that preseason gloom.\n\n\n\n",
-        "team": "http://www.espn.com/nba/team/_/name/dal/dallas-mavericks"
+      "rank": "16",
+      "record": "2-1",
+      "summary": "Wes Matthews, Deron Williams and Chandler Parsons are all suddenly back ahead of schedule. Dirk Nowitzki, as this Sunday night dunk at Staples Center suggests, is feeling more limber than advertised at 37. And the looming re-signing of Rick Carlisle only helps the Mavs wipe away even more of that preseason gloom.\n\n\n\n",
+      "team": "http://www.espn.com/nba/team/_/name/dal/dallas-mavericks"
     },
     {
-        "rank": "17",
-        "record": "0-3",
-        "summary": "Snap take on Anthony Davis' underwhelming start to the season: He's pressing to compensate for the Pelicans' many injuries. There's simply no way that the Brow-Alvin Gentry partnership won't flourish. The Pels are just extremely undermanned right now, which obviously isn't the best way to kick things off in the West. Hold your panic.",
-        "team": "http://www.espn.com/nba/team/_/name/no/new-orleans-pelicans"
+      "rank": "17",
+      "record": "0-3",
+      "summary": "Snap take on Anthony Davis' underwhelming start to the season: He's pressing to compensate for the Pelicans' many injuries. There's simply no way that the Brow-Alvin Gentry partnership won't flourish. The Pels are just extremely undermanned right now, which obviously isn't the best way to kick things off in the West. Hold your panic.",
+      "team": "http://www.espn.com/nba/team/_/name/no/new-orleans-pelicans"
     },
     {
-        "rank": "18",
-        "record": "2-1",
-        "summary": "It's a critical season in the desert, where the Suns will establish an unwanted franchise record if they miss the playoffs for a sixth straight season. Have to say, though, that Friday night's fantastic Steve Nash Ring of Honor ceremonies -- with Suns legends everywhere you looked -- reminded us just how rich this club's history is.\n\n\n\n",
-        "team": "http://www.espn.com/nba/team/_/name/phx/phoenix-suns"
+      "rank": "18",
+      "record": "2-1",
+      "summary": "It's a critical season in the desert, where the Suns will establish an unwanted franchise record if they miss the playoffs for a sixth straight season. Have to say, though, that Friday night's fantastic Steve Nash Ring of Honor ceremonies -- with Suns legends everywhere you looked -- reminded us just how rich this club's history is.\n\n\n\n",
+      "team": "http://www.espn.com/nba/team/_/name/phx/phoenix-suns"
     },
     {
-        "rank": "19",
-        "record": "2-1",
-        "summary": "The Knicks are actually playing with a bit of a swagger, clearly oblivious to the fact that ESPN's trusty Basketball Power Index gave them just a 1-percent chance of making the playoffs coming into the season. Yet we'll have to see how long that lasts when this week's first two foes are the Spurs (home) and Cavs (road).",
-        "team": "http://www.espn.com/nba/team/_/name/ny/new-york-knicks"
+      "rank": "19",
+      "record": "2-1",
+      "summary": "The Knicks are actually playing with a bit of a swagger, clearly oblivious to the fact that ESPN's trusty Basketball Power Index gave them just a 1-percent chance of making the playoffs coming into the season. Yet we'll have to see how long that lasts when this week's first two foes are the Spurs (home) and Cavs (road).",
+      "team": "http://www.espn.com/nba/team/_/name/ny/new-york-knicks"
     },
     {
-        "rank": "20",
-        "record": "0-3",
-        "summary": "Coach Jason Kidd needs Monday night's trip back to Brooklyn more than he ever imagined. With injuries galore (Jabari Parker, John Henson and O.J. Mayo) and three straight no-shows defensively, Milwaukee would be generating the NBA's most befuddling dismay if not for what's happening in Houston right now.",
-        "team": "http://www.espn.com/nba/team/_/name/mil/milwaukee-bucks"
+      "rank": "20",
+      "record": "0-3",
+      "summary": "Coach Jason Kidd needs Monday night's trip back to Brooklyn more than he ever imagined. With injuries galore (Jabari Parker, John Henson and O.J. Mayo) and three straight no-shows defensively, Milwaukee would be generating the NBA's most befuddling dismay if not for what's happening in Houston right now.",
+      "team": "http://www.espn.com/nba/team/_/name/mil/milwaukee-bucks"
     },
     {
-        "rank": "21",
-        "record": "0-3",
-        "summary": "No one has taken to calling them the gritty, gutty Magic just yet. Orlando, though, does seem to have quickly caught onto the sort of scrappiness expected of a Scott Skiles-coached team, given how hard it's been for other teams to shake them so far. Losses to Washington, OKC and Chicago (in Chicago) came by a frustrating total of nine points combined.",
-        "team": "http://www.espn.com/nba/team/_/name/orl/orlando-magic"
+      "rank": "21",
+      "record": "0-3",
+      "summary": "No one has taken to calling them the gritty, gutty Magic just yet. Orlando, though, does seem to have quickly caught onto the sort of scrappiness expected of a Scott Skiles-coached team, given how hard it's been for other teams to shake them so far. Losses to Washington, OKC and Chicago (in Chicago) came by a frustrating total of nine points combined.",
+      "team": "http://www.espn.com/nba/team/_/name/orl/orlando-magic"
     },
     {
-        "rank": "22",
-        "record": "1-2",
-        "summary": "For all the inevitable fretting attached to the sudden uncertainty surrounding DeMarcus Cousins' right heel, here's the flip side: George Karl is already getting quite a response from Rajon Rondo, who put together back-to-back games over the weekend with at least 20 points for the first time since December 2012.\n\n\n\n",
-        "team": "http://www.espn.com/nba/team/_/name/sac/sacramento-kings"
+      "rank": "22",
+      "record": "1-2",
+      "summary": "For all the inevitable fretting attached to the sudden uncertainty surrounding DeMarcus Cousins' right heel, here's the flip side: George Karl is already getting quite a response from Rajon Rondo, who put together back-to-back games over the weekend with at least 20 points for the first time since December 2012.\n\n\n\n",
+      "team": "http://www.espn.com/nba/team/_/name/sac/sacramento-kings"
     },
     {
-        "rank": "23",
-        "record": "2-0",
-        "summary": "A whopping nine teams out there are still searching for win No. 1. Six teams, meanwhile, made it to Week 2 still unbeaten, with the Wolves riding eruptions from Ricky Rubio and impressive rookie Karl-Anthony Towns to honor Flip Saunders by unexpectedly crashing that club (along with the Clippers, Pistons, Raptors, Thunder and Warriors).",
-        "team": "http://www.espn.com/nba/team/_/name/min/minnesota-timberwolves"
+      "rank": "23",
+      "record": "2-0",
+      "summary": "A whopping nine teams out there are still searching for win No. 1. Six teams, meanwhile, made it to Week 2 still unbeaten, with the Wolves riding eruptions from Ricky Rubio and impressive rookie Karl-Anthony Towns to honor Flip Saunders by unexpectedly crashing that club (along with the Clippers, Pistons, Raptors, Thunder and Warriors).",
+      "team": "http://www.espn.com/nba/team/_/name/min/minnesota-timberwolves"
     },
     {
-        "rank": "24",
-        "record": "1-2",
-        "summary": "Do you downgrade Denver's stunning 105-85 triumph in Houston on opening night because the Rockets haven't stopped struggling since? Or do you continue to applaud the fact that the Nuggets, as predicted by no one, inflicted Houston's worst season-opening loss since a 128-95 L to Seattle way back in 1982? It's the latter for us.",
-        "team": "http://www.espn.com/nba/team/_/name/den/denver-nuggets"
+      "rank": "24",
+      "record": "1-2",
+      "summary": "Do you downgrade Denver's stunning 105-85 triumph in Houston on opening night because the Rockets haven't stopped struggling since? Or do you continue to applaud the fact that the Nuggets, as predicted by no one, inflicted Houston's worst season-opening loss since a 128-95 L to Seattle way back in 1982? It's the latter for us.",
+      "team": "http://www.espn.com/nba/team/_/name/den/denver-nuggets"
     },
     {
-        "rank": "25",
-        "record": "0-3",
-        "summary": "Having bought into the preseason brilliance of Paul George, we must confess that no one at committee headquarters envisioned the Pacers' first 0-3 start since 2009-10, when they finished a mere 32-50 to earn a No. 10 overall pick that became ... Paul George. Sure didn't expect the rough start Monta Ellis is having, either.",
-        "team": "http://www.espn.com/nba/team/_/name/ind/indiana-pacers"
+      "rank": "25",
+      "record": "0-3",
+      "summary": "Having bought into the preseason brilliance of Paul George, we must confess that no one at committee headquarters envisioned the Pacers' first 0-3 start since 2009-10, when they finished a mere 32-50 to earn a No. 10 overall pick that became ... Paul George. Sure didn't expect the rough start Monta Ellis is having, either.",
+      "team": "http://www.espn.com/nba/team/_/name/ind/indiana-pacers"
     },
     {
-        "rank": "26",
-        "record": "0-3",
-        "summary": "The Hornets' looming deal with Jeremy Lamb means they lead the league in contract extensions, having handed out two of the six we've seen for players eligible for such deals. The problem, of course, is that the other recipient -- Michael Kidd-Gilchrist -- is feared out for the season and might be Charlotte's most important player.\n\n\n\n",
-        "team": "http://www.espn.com/nba/team/_/name/cha/charlotte-hornets"
+      "rank": "26",
+      "record": "0-3",
+      "summary": "The Hornets' looming deal with Jeremy Lamb means they lead the league in contract extensions, having handed out two of the six we've seen for players eligible for such deals. The problem, of course, is that the other recipient -- Michael Kidd-Gilchrist -- is feared out for the season and might be Charlotte's most important player.\n\n\n\n",
+      "team": "http://www.espn.com/nba/team/_/name/cha/charlotte-hornets"
     },
     {
-        "rank": "27",
-        "record": "1-2",
-        "summary": "Still focused on C.J. McCollum's 37-point eruption in the Blazers' opener because he had only topped 20 points in three previous regular-season games. He was an undoubtedly popular preseason pick for Most Improved Player honors, but still. Thirty-seven is a higher total in Game 1 for any Blazer since Kiki Vandeweghe's 47 in 1984.\n\n\n\n\n",
-        "team": "http://www.espn.com/nba/team/_/name/por/portland-trail-blazers"
+      "rank": "27",
+      "record": "1-2",
+      "summary": "Still focused on C.J. McCollum's 37-point eruption in the Blazers' opener because he had only topped 20 points in three previous regular-season games. He was an undoubtedly popular preseason pick for Most Improved Player honors, but still. Thirty-seven is a higher total in Game 1 for any Blazer since Kiki Vandeweghe's 47 in 1984.\n\n\n\n\n",
+      "team": "http://www.espn.com/nba/team/_/name/por/portland-trail-blazers"
     },
     {
-        "rank": "28",
-        "record": "0-3",
-        "summary": "Kobe Bryant's 20th season with the Lakers, eclipsing John Stockton's 19 in a row with Utah to set a new record with one franchise, is now underway, establishing Kobe as just the fifth player in league history -- and the first guard -- to last that long. Click elsewhere if you need to read rants blaming him for all of L.A.'s many ills one week in.",
-        "team": "http://www.espn.com/nba/team/_/name/lal/los-angeles-lakers"
+      "rank": "28",
+      "record": "0-3",
+      "summary": "Kobe Bryant's 20th season with the Lakers, eclipsing John Stockton's 19 in a row with Utah to set a new record with one franchise, is now underway, establishing Kobe as just the fifth player in league history -- and the first guard -- to last that long. Click elsewhere if you need to read rants blaming him for all of L.A.'s many ills one week in.",
+      "team": "http://www.espn.com/nba/team/_/name/lal/los-angeles-lakers"
     },
     {
-        "rank": "29",
-        "record": "0-3",
-        "summary": "No one is suggesting that the Nets, after their first 0-3 launch since the 2009-10 season, are going to plummet all the way to 0-18 like that team did. Friday's home date with the Lakers, however, looks like the best opportunity for win No. 1 with a stretch to follow that calls for eight road dates in a span of 10 games from Nov. 7-28.",
-        "team": "http://www.espn.com/nba/team/_/name/bkn/brooklyn-nets"
+      "rank": "29",
+      "record": "0-3",
+      "summary": "No one is suggesting that the Nets, after their first 0-3 launch since the 2009-10 season, are going to plummet all the way to 0-18 like that team did. Friday's home date with the Lakers, however, looks like the best opportunity for win No. 1 with a stretch to follow that calls for eight road dates in a span of 10 games from Nov. 7-28.",
+      "team": "http://www.espn.com/nba/team/_/name/bkn/brooklyn-nets"
     },
     {
-        "rank": "30",
-        "record": "0-2",
-        "summary": "Don't come down too hard on Jahlil Okafor for following up his 26-point introduction to the NBA with a 10-point struggle against the Rudy Gobert-led Jazz. Don't forget that only two centers in league history have started their careers with consecutive 25-point games in the shot-clock era: Wilt Chamberlain and Walt Bellamy.",
-        "team": "http://www.espn.com/nba/team/_/name/phi/philadelphia-76ers"
+      "rank": "30",
+      "record": "0-2",
+      "summary": "Don't come down too hard on Jahlil Okafor for following up his 26-point introduction to the NBA with a 10-point struggle against the Rudy Gobert-led Jazz. Don't forget that only two centers in league history have started their careers with consecutive 25-point games in the shot-clock era: Wilt Chamberlain and Walt Bellamy.",
+      "team": "http://www.espn.com/nba/team/_/name/phi/philadelphia-76ers"
     }
-]
+  ]
+}
