@@ -29,7 +29,7 @@ class Command(BaseCommand):
 
         parser.add_argument('--dump',
                 action='store_true',
-                dest='test',
+                dest='dump',
                 default=False,
                 help='Dump data to json instead of to DB')
 
@@ -38,8 +38,7 @@ class Command(BaseCommand):
         year = options['year']
         week = options['week']
         if week != '':
-            url = 'http://espn.go.com/nba/powerrankings/_/week/{0}'.format(week)
-
+            url = 'http://espn.go.com/nba/powerrankings/_/year/{0}/week/{1}'.format(year, week)
 
         sys.stdout.write('Scraping URL: ' + url + '\n')
         sys.stdout.flush()
@@ -68,10 +67,6 @@ class Command(BaseCommand):
                 return
 
         rows = table.find_all('tr', ['evenrow', 'oddrow'])
-
-        if options['test']:
-            print 'Year: ' + str(year)
-            print 'Week: ' + str(week) + '\n'
 
         for row in rows:
             cols = row.find_all('td')

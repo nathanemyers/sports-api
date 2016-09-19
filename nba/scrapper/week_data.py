@@ -1,5 +1,5 @@
 import json
-from nba.models import Ranking
+from nba.models import Ranking, Team
 
 class WeekData:
     
@@ -10,25 +10,6 @@ class WeekData:
 
     def add_rank(self, data):
         self.rankings.append(data)
-
-    def save(self):
-        if not verify_length():
-            raise ValueError('Missing Teams!')
-        if not verify_ranks():
-            raise ValueError('Ranks are not uniform!')
-
-        self.rankings = map(lambda x: process_rank(x, self.year, self.week), self.rankings)
-
-        for rank in self.rankings:
-            rank_object = Ranking(
-                    year = self.year,
-                    week = self.week,
-                    rank = data.rank,
-                    record = data.record,
-                    team = team,
-                    summary = data.comment_string
-                    )
-            rank_object.save()
 
     def verify_length(self):
         if self.rankings.__len__() != 30:
@@ -46,6 +27,25 @@ class WeekData:
                 return False
         return True
 
+    def save(self):
+        if not self.verify_length():
+            raise ValueError('Missing Teams!')
+        if not self.verify_ranks():
+            raise ValueError('Ranks are not uniform!')
+
+        self.rankings = map(lambda x: process_rank(x, self.year, self.week), self.rankings)
+
+        for rank in self.rankings:
+            rank_object = Ranking(
+                    year = self.year,
+                    week = self.week,
+                    rank = data.rank,
+                    record = data.record,
+                    team = team,
+                    summary = data.comment_string
+                    )
+            rank_object.save()
+
     def to_json(self):
         serialized = {
                 'year': self.year,
@@ -62,8 +62,8 @@ class WeekData:
         self.rankings = data['rankings']
 
 def process_rank(rank, year, week):
-    rank.team = resolve_team(rank.team)
-    rank.summary = stripTags(rank.summary, ['b', 'i', 'a', 'u'])
+    rank['team']= resolve_team(rank['team'])
+    rank['summary'] = stripTags(rank['summary'], ['b', 'i', 'a', 'u'])
     return rank
 
 def stripTags(html, invalid_tags):
