@@ -12,22 +12,21 @@ class Command(BaseCommand):
                 action='store',
                 type=int,
                 dest='week',
-                nargs='?',
+                nargs='1',
                 help='Delete the specified week')
 
         parser.add_argument('--year',
                 action='store',
                 type=int,
                 dest='year',
-                nargs='?',
-                default=2016,
+                nargs='1',
                 help='Delete the specified year')
 
     def handle(self, *args, **options):
         week = options['week']
         year = options['year']
 
-        print 'Deleting data for week ' + str(week) + ': ' + str(year) + '...'
+        print 'Deleting data for week {0} ({1})...'.format(week, year)
         deleted = Ranking.objects.filter(year=year, week=week).delete()
-        print 'Deleted ' + str(deleted[0]) + ' rankings.'
+        print 'Deleted {0} rankings.'.format(deleted[0])
 
