@@ -1,12 +1,25 @@
-from django.test import TestCase
+from django.test import TestCase, RequestFactory
 from django.core.management import call_command
 
 from nba.scrapper.week_data import WeekData
 
+class ApiTest(TestCase):
+    def setUp(self):
+        self.factory = RequestFactory()
+
+    def test_week_rankings(self):
+        request = self.factory.get('/rankings/2016/1')
+        return
+
+    def test_year_rankings(self):
+        request = self.factory.get('/rankings/2016')
+        return
+
+    def test_most_recent(self):
+        request = self.factory.get('/rankings/info')
+        return
 
 class WeekDataTest(TestCase):
-    def setupDB():
-        call_command('loaddata', 'nba/fixtures/clean_db')
 
     def test_init(self):
         test = WeekData(2016, 1)
