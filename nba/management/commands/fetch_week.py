@@ -7,6 +7,19 @@ import sys
 from nba.models import Ranking
 from nba.scrapper.week_data import WeekData
 
+def stripTags(html, invalid_tags):
+    print html
+    for tag in html:
+        if tag.name in invalid_tags:
+            s = ""
+            for c in tag.contents:
+                if not isinstance(c, NavigableString):
+                    c = stripTags(unicode(c), invalid_tags)
+                s += unicode(c)
+
+            tag.replaceWith(s)
+    return html
+
 class Command(BaseCommand):
     help = 'Fetches the weekly ranking data from ESPN. If no week is specified, fetch rankings from the current week'
 
@@ -78,6 +91,7 @@ class Command(BaseCommand):
             team = city_col[0].get('href') 
 
             summary_raw = cols[3]
+            summary_raw = stripTags(summary_raw, ['b', 'i', 'a', 'u'])
             
             # TODO summary.getText() will sometimes leave a bunch of whitespace at the end, doesn't seem to effect webapp though
             summary = summary_raw.getText()

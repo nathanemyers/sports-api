@@ -39,10 +39,10 @@ class WeekData:
             rank_object = Ranking(
                     year = self.year,
                     week = self.week,
-                    rank = data.rank,
-                    record = data.record,
-                    team = team,
-                    summary = data.comment_string
+                    rank = rank['rank'],
+                    record = rank['record'],
+                    team = rank['team'],
+                    summary = rank['summary']
                     )
             rank_object.save()
 
@@ -63,20 +63,7 @@ class WeekData:
 
 def process_rank(rank, year, week):
     rank['team']= resolve_team(rank['team'])
-    rank['summary'] = stripTags(rank['summary'], ['b', 'i', 'a', 'u'])
     return rank
-
-def stripTags(html, invalid_tags):
-    for tag in html:
-        if tag.name in invalid_tags:
-            s = ""
-            for c in tag.contents:
-                if not isinstance(c, NavigableString):
-                    c = stripTags(unicode(c), invalid_tags)
-                s += unicode(c)
-
-            tag.replaceWith(s)
-    return html
 
 def resolve_team(team_html_link):
     if 'lakers' in team_html_link:
