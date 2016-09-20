@@ -8,7 +8,6 @@ from nba.models import Ranking
 from nba.scrapper.week_data import WeekData
 
 def stripTags(html, invalid_tags):
-    print html
     for tag in html:
         if tag.name in invalid_tags:
             s = ""
@@ -59,7 +58,7 @@ class Command(BaseCommand):
         html = response.read()
         soup = BeautifulSoup(html, 'html.parser')
 
-        table = soup.find('table')
+        table = soup.find('table', 'tablehead')
 
         # Figure out what week we're looking at
         table_head = table.find('tr', 'stathead').find('td').getText()
@@ -71,10 +70,11 @@ class Command(BaseCommand):
             week = int(re.search('Week (\w+)', matched_week).group(1))
 
         data = WeekData(year, week)
+        data.set_url(url)
 
         if not options['dump']:
             lookup = Ranking.objects.filter(year=year, week=week)
-            if len(lookup) > 0: 
+            if len(lookup) > 0:
                 sys.stdout.write('Ranking data for Year: {0} Week: {1} already present. Quiting.\n'.format(year, week))
                 sys.stdout.flush()
                 return
@@ -88,11 +88,11 @@ class Command(BaseCommand):
             rank = cols[0].string
 
             city_col = cols[1].find_all('a')
-            team = city_col[0].get('href') 
+            team = city_col[0].get('href')
 
             summary_raw = cols[3]
             summary_raw = stripTags(summary_raw, ['b', 'i', 'a', 'u'])
-            
+
             # TODO summary.getText() will sometimes leave a bunch of whitespace at the end, doesn't seem to effect webapp though
             summary = summary_raw.getText()
 
@@ -120,4 +120,3 @@ class Command(BaseCommand):
             print 'python manage.py upload_json'
 
         sys.stdout.write('Finished scrape of Year: ' + str(year) + ' Week: ' + str(week) + '.\n')
-            

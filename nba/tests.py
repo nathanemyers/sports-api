@@ -1,3 +1,4 @@
+import json
 from django.test import TestCase, RequestFactory
 from django.core.management import call_command
 
@@ -36,8 +37,8 @@ class WeekDataTest(TestCase):
     def test_load_json(self):
         test = WeekData()
         with open('nba/fixtures/week1data.json', 'r') as f:
-            json = f.read()
-        test.load_from_json(json)
+            json_data = f.read()
+        test.load_from_json(json.loads(json_data))
         
         self.assertTrue(test.verify_ranks())
         self.assertTrue(test.verify_length())
@@ -47,8 +48,8 @@ class WeekDataTest(TestCase):
 
         test = WeekData()
         with open('nba/fixtures/week1data.json', 'r') as f:
-            json = f.read()
-        test.load_from_json(json)
+            json_data = f.read()
+        test.load_from_json(json.loads(json_data))
 
         test.save()
 

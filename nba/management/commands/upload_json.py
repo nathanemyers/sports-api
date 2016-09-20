@@ -7,9 +7,7 @@ class Command(BaseCommand):
     help = 'Upload a json representation of a week\'s worth of data'
 
     def add_arguments(self, parser):
-
         parser.add_argument('json',
-                nargs=1,
                 help='json file to load into database')
 
     def handle(self, *args, **options):
@@ -18,14 +16,19 @@ class Command(BaseCommand):
         with open(json_file, 'r') as f:
             json_data = json.load(f)
 
-        lookup = Ranking.objects.filter(year=json_data.year, week=json_data.week)
+        week = json_data['week']
+        year = json_data['year']
+        rankings = json_data['rankings']
+
+        lookup = Ranking.objects.filter(year=year, week=week)
         if len(lookup) > 0: 
+            print 'Ranking data for Year: {0} Week: {1} already present. Quiting.'.format(year, week)
             sys.stdout.write('Ranking data for Year: ' + str(year) + ' Week: ' + str(week) + ' already present. Quiting.\n')
             sys.stdout.flush()
             return
 
-        data = WeekData(json_data.year, json_data.week)
-        data.load_from_json(json_data.rankings)
+        data = WeekData(year, week)
+        data.load_from_json(json_data)
 
         try:
             data.save()

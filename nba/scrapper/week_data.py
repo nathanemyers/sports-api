@@ -2,11 +2,14 @@ import json
 from nba.models import Ranking, Team
 
 class WeekData:
-    
+
     def __init__(self, year=None, week=None):
         self.rankings = []
         self.year = year
         self.week = week
+
+    def set_url(self, url):
+        self.url = url
 
     def add_rank(self, data):
         self.rankings.append(data)
@@ -29,9 +32,9 @@ class WeekData:
 
     def save(self):
         if not self.verify_length():
-            raise ValueError('Missing Teams!')
+            raise ValueError('Validation Error: Not all teams are present, (under 30)')
         if not self.verify_ranks():
-            raise ValueError('Ranks are not uniform!')
+            raise ValueError('Validation Error: Rankings are not uniform 1 to 30')
 
         self.rankings = map(lambda x: process_rank(x, self.year, self.week), self.rankings)
 
@@ -50,16 +53,16 @@ class WeekData:
         serialized = {
                 'year': self.year,
                 'week': self.week,
+                'url': self.url,
                 'rankings': self.rankings
                 }
-        return json.dumps(serialized, sort_keys=True, 
+        return json.dumps(serialized, sort_keys=True,
                 indent=4, separators=(',', ': '))
 
     def load_from_json(self, json_data):
-        data = json.loads(json_data)
-        self.year = data['year']
-        self.week = data['week']
-        self.rankings = data['rankings']
+        self.year = json_data['year']
+        self.week = json_data['week']
+        self.rankings = json_data['rankings']
 
 def process_rank(rank, year, week):
     rank['team']= resolve_team(rank['team'])
@@ -127,4 +130,3 @@ def resolve_team(team_html_link):
     if '76ers' in team_html_link:
         return Team.objects.get(name='76ers')
     raise ValueError('Could not find team!')
-
