@@ -3,11 +3,6 @@ from django.http import HttpResponse, JsonResponse
 from .models import Team, Ranking
 
 # Create your views here.
-def chart(request):
-    return render(request, 'chart/nba_power_rankings.html', {
-        'version': '2.0'
-        })
-
 def info(request):
     most_recent = Ranking.objects.last()
     return JsonResponse({'most_recent_week': most_recent.week})
@@ -22,7 +17,7 @@ def week_rankings(request, year, week):
 
 def year_rankings(request, year):
     start_week = request.GET.get('start_week', 0)
-    end_week = request.GET.get('end_week', 50) # I'm not sure exactly how many weeks there will be
+    end_week = request.GET.get('end_week', 24)
 
     rankings = Ranking.objects.filter(
             year=year,

@@ -3,22 +3,27 @@ from django.test import TestCase, RequestFactory
 from django.core.management import call_command
 
 from nba.scrapper.week_data import WeekData
+from .views import week_rankings, year_rankings, info
 
 class ApiTest(TestCase):
     def setUp(self):
         self.factory = RequestFactory()
+        call_command('loaddata', 'full2016')
 
     def test_week_rankings(self):
         request = self.factory.get('/rankings/2016/1')
-        return
+        response = week_rankings(request, 2016, 1)
+        rankings = json.loads(response.content)
+
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(rankings['rankings']['Warriors'], 1)
+        self.assertEquals(rankings['rankings']['Pacers'], 25)
 
     def test_year_rankings(self):
         request = self.factory.get('/rankings/2016')
-        return
 
     def test_most_recent(self):
         request = self.factory.get('/rankings/info')
-        return
 
 class WeekDataTest(TestCase):
 
@@ -36,7 +41,7 @@ class WeekDataTest(TestCase):
 
     def test_load_json(self):
         test = WeekData()
-        with open('nba/fixtures/week1data.json', 'r') as f:
+        with open('nba/data/week1data.json', 'r') as f:
             json_data = f.read()
         test.load_from_json(json.loads(json_data))
         
@@ -47,7 +52,7 @@ class WeekDataTest(TestCase):
         call_command('loaddata', 'clean_db')
 
         test = WeekData()
-        with open('nba/fixtures/week1data.json', 'r') as f:
+        with open('nba/data/week1data.json', 'r') as f:
             json_data = f.read()
         test.load_from_json(json.loads(json_data))
 
