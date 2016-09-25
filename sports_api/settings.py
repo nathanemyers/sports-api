@@ -49,14 +49,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
 ]
 
 #TODO think about hiding this stuff in config
-CORS_ORIGIN_WHITELIST = (
-        'nathanemyers.com',
-        'nathanmyers.design',
-        )
+# CORS_ORIGIN_WHITELIST = (
+        # 'nathanemyers.com',
+        # 'nathanmyers.design',
+        # )
 
 ROOT_URLCONF = 'sports_api.urls'
 
