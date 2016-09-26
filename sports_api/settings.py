@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'rest_framework',
     'nba',
 ]
 
@@ -48,14 +49,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'corsheaders.middleware.CorsMiddleware',
 ]
 
-#TODO think about hiding this stuff in config
-# CORS_ORIGIN_WHITELIST = (
-        # 'nathanemyers.com',
-        # 'nathanmyers.design',
-        # )
+REST_FRAMEWORK = {
+
+        }
 
 ROOT_URLCONF = 'sports_api.urls'
 

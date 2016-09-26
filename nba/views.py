@@ -1,8 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from .models import Team, Ranking
+from nba.models import Team, Ranking
+from nba.serializers import RankingSerializer
+from rest_framework import generics
 
 # Create your views here.
+
+class WeekList(generics.ListAPIView):
+    queryset = Ranking.objects.all()
+    serializer_class = RankingSerializer
+    lookup_field = 'week'
+
+
 def info(request):
     most_recent = Ranking.objects.last()
     return JsonResponse({'most_recent_week': most_recent.week})
