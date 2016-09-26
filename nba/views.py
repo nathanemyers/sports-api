@@ -7,9 +7,12 @@ from rest_framework import generics
 # Create your views here.
 
 class WeekList(generics.ListAPIView):
-    queryset = Ranking.objects.all()
     serializer_class = RankingSerializer
-    lookup_field = 'week'
+
+    def get_queryset(self):
+        week = self.kwargs['week']
+        year = self.kwargs['year']
+        return Ranking.objects.filter(week=week, year=year)
 
 
 def info(request):
