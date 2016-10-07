@@ -6,6 +6,9 @@ from rest_framework.test import APIRequestFactory
 from nba.scrapper.week_data import WeekData
 from nba.views import info, WeekList, YearList
 
+#TODO: There's a problem with the fixture loading, I need to regenerate the fixtures using:
+# python manange.py dumpdata --indent=4 -e sessions admin contenttypes (or something like that)
+
 # class ApiTest(TestCase):
     # def setUp(self):
         # self.factory = APIRequestFactory()
